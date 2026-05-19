@@ -1,13 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Saya</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #222;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* Button */
+        button {
+            padding: 12px 24px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+        }
+    </style>
 </head>
+
 <body>
 
-    <h1>Hello World</h1>
+    <!-- Navbar -->
+    <nav>
+        <h2 class="logo">MyWebsite</h2>
 
-    <script src="js/script.js"></script>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hello World 👋</h1>
+
+        <p>
+            Selamat datang di website sederhana menggunakan
+            HTML, CSS, dan JavaScript.
+        </p>
+
+        <button onclick="showMessage()">
+            Klik Saya
+        </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Aulia - Tugas GitHub</p>
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("Halo! JavaScript berhasil berjalan 🚀");
+        }
+    </script>
+
 </body>
+
 </html>
