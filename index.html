@@ -3,25 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <!-- Mengatur tampilan responsive di HP -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Judul website -->
     <title>Website Saya</title>
 
     <style>
-        /* Reset */
+
+        /* =========================
+           RESET CSS
+           Menghapus margin & padding bawaan browser
+        ========================= */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body */
+        /* =========================
+           BODY WEBSITE
+           Mengatur font, warna background, dan warna text
+        ========================= */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             color: #333;
         }
 
-        /* Navbar */
+        /* =========================
+           NAVBAR
+           Bagian menu navigasi website
+        ========================= */
         nav {
             background-color: #222;
             color: white;
@@ -33,22 +47,38 @@
             padding: 15px 40px;
         }
 
+        /* Logo website */
         .logo {
             font-size: 24px;
         }
 
+        /* Menu navbar */
         nav ul {
             display: flex;
             list-style: none;
             gap: 20px;
         }
 
+        /* Link navbar */
         nav a {
             color: white;
             text-decoration: none;
+
+            /* METHOD BARU:
+               Menambahkan efek transisi */
+            transition: 0.3s;
         }
 
-        /* Hero */
+        /* METHOD BARU:
+           Hover navbar */
+        nav a:hover {
+            color: #00bfff;
+        }
+
+        /* =========================
+           HERO SECTION
+           Bagian utama website
+        ========================= */
         .hero {
             text-align: center;
             padding: 100px 20px;
@@ -64,7 +94,9 @@
             margin-bottom: 25px;
         }
 
-        /* Button */
+        /* =========================
+           BUTTON
+        ========================= */
         button {
             padding: 12px 24px;
             border: none;
@@ -73,59 +105,206 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 16px;
+            margin: 10px;
+
+            /* METHOD BARU:
+               Animasi transisi tombol */
+            transition: 0.3s;
         }
 
+        /* METHOD BARU:
+           Hover button */
         button:hover {
             background-color: #0056b3;
+
+            /* Efek zoom saat hover */
+            transform: scale(1.05);
         }
 
-        /* Footer */
+        /* =========================
+           CARD SECTION
+           METHOD BARU:
+           Menambahkan card informasi
+        ========================= */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+
+            /* Responsive */
+            flex-wrap: wrap;
+        }
+
+        /* Card */
+        .card {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 12px;
+
+            /* Bayangan card */
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
         footer {
             background-color: #222;
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 80px;
+            margin-top: 50px;
         }
+
+        /* =========================
+           METHOD BARU:
+           DARK MODE
+        ========================= */
+        .dark-mode {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        /* Dark mode untuk card */
+        .dark-mode .card {
+            background-color: #333;
+            color: white;
+        }
+
+        /* Dark mode navbar & footer */
+        .dark-mode nav,
+        .dark-mode footer {
+            background-color: #111;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
     <nav>
+
+        <!-- Logo website -->
         <h2 class="logo">MyWebsite</h2>
 
+        <!-- Menu navigasi -->
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+
     </nav>
 
-    <!-- Hero Section -->
+    <!-- =========================
+         HERO SECTION
+    ========================= -->
     <section class="hero">
-        <h1>Hello World 👋</h1>
+
+        <!-- METHOD BARU:
+             Ditambahkan id="judul"
+             agar bisa diubah dengan JavaScript -->
+        <h1 id="judul">Hello World 👋</h1>
 
         <p>
             Selamat datang di website sederhana menggunakan
             HTML, CSS, dan JavaScript.
         </p>
 
+        <!-- Tombol alert -->
         <button onclick="showMessage()">
             Klik Saya
         </button>
+
+        <!-- METHOD BARU:
+             Tombol ganti judul -->
+        <button onclick="changeText()">
+            Ganti Judul
+        </button>
+
+        <!-- METHOD BARU:
+             Tombol dark mode -->
+        <button onclick="toggleDarkMode()">
+            Dark Mode
+        </button>
+
     </section>
 
-    <!-- Footer -->
+    <!-- =========================
+         METHOD BARU:
+         CARD SECTION
+    ========================= -->
+    <section class="container">
+
+        <!-- Card HTML -->
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Digunakan untuk struktur website.</p>
+        </div>
+
+        <!-- Card CSS -->
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Digunakan untuk mempercantik tampilan.</p>
+        </div>
+
+        <!-- Card JavaScript -->
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>Digunakan untuk membuat website interaktif.</p>
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
     <footer>
         <p>© 2026 Aulia - Tugas GitHub</p>
     </footer>
 
     <script>
+
+        /* =========================
+           METHOD 1
+           Menampilkan alert
+        ========================= */
         function showMessage() {
             alert("Halo! JavaScript berhasil berjalan 🚀");
         }
+
+        /* =========================
+           METHOD BARU 2
+           Mengganti text judul
+        ========================= */
+        function changeText() {
+
+            // Mengubah isi h1 dengan id="judul"
+            document.getElementById("judul").innerHTML =
+                "Selamat Datang di Website Saya 😄";
+        }
+
+        /* =========================
+           METHOD BARU 3
+           Mengaktifkan dark mode
+        ========================= */
+        function toggleDarkMode() {
+
+            // Menambahkan / menghapus class dark-mode
+            document.body.classList.toggle("dark-mode");
+        }
+
     </script>
 
 </body>
