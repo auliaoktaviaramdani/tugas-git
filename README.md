@@ -1,10 +1,18 @@
 # tugas-git
-# Profile Diri
-- Nama: Aulia Oktavia Ramdani
-- Minat: Backend Developer
 
-# Aplikasi yang akan dikembangkan
-Sistem Manajemen Tugas (To-Do App) dengan fitur:
-- Registrasi & login
-- Tambah/edit/hapus tugas
-- Deadline reminder
+## Profil
+Aulia Oktavia R (1324040)
+
+## Deskripsi
+Website sederhana menggunakan HTML, CSS, dan JavaScript.
+
+## Fitur
+- Navbar
+- Dark Mode
+- Responsive Design
+
+## Teknologi
+- HTML
+- CSS
+- JavaScript
+
